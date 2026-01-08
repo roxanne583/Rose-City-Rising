@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwoec51f6mei0"
-path="res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"
+uid="uid://88q7rqtpb7r3"
+path="res://.godot/imported/clouds-sunset.png-0020252278ebe462cb47145e8ea3cf6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/slime_purple.png"
-dest_files=["res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"]
+source_file="res://assets/sprites/clouds-sunset.png"
+dest_files=["res://.godot/imported/clouds-sunset.png-0020252278ebe462cb47145e8ea3cf6d.ctex"]
 
 [params]
 

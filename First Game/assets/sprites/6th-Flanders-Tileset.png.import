@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwoec51f6mei0"
-path="res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"
+uid="uid://bps4gvc3hrsvk"
+path="res://.godot/imported/6th-Flanders-Tileset.png-057312064c06ae1d32aafcd026782ea8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/slime_purple.png"
-dest_files=["res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"]
+source_file="res://assets/sprites/6th-Flanders-Tileset.png"
+dest_files=["res://.godot/imported/6th-Flanders-Tileset.png-057312064c06ae1d32aafcd026782ea8.ctex"]
 
 [params]
 

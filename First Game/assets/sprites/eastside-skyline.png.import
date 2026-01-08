@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwoec51f6mei0"
-path="res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"
+uid="uid://bjo6p3m6pw3rr"
+path="res://.godot/imported/eastside-skyline.png-27a59aabae0c668171c926154329a17c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/slime_purple.png"
-dest_files=["res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"]
+source_file="res://assets/sprites/eastside-skyline.png"
+dest_files=["res://.godot/imported/eastside-skyline.png-27a59aabae0c668171c926154329a17c.ctex"]
 
 [params]
 
