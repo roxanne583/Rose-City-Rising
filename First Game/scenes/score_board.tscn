@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh7kgbpwbygkh"]
+
+[ext_resource type="Script" uid="uid://chpl4eo2v8wq0" path="res://scenes/score_board.gd" id="1_ek31y"]
+
+[node name="ScoreBoard" type="CanvasLayer"]
+script = ExtResource("1_ek31y")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
