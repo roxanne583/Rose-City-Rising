@@ -13,6 +13,7 @@ var jump_force = -160
 
 @onready var animated_sprite = $Violet
 
+# Main Player Controls	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -48,7 +49,11 @@ func _physics_process(delta):
 		else:
 			animated_sprite.play("run")
 	else:
-		animated_sprite.play("jump")
+		# Player is in the air - Check vertical direction
+		if velocity.y < 0:
+			animated_sprite.play("Jump")
+		else:
+			animated_sprite.play("death")
 	
 	# Apply movement
 	if direction:

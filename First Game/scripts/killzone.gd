@@ -4,9 +4,10 @@ extends Area2D
 
 func _on_body_entered(body):
 	print("You died!")
-	Engine.time_scale = 0.5
+	Engine.time_scale = 0.4
 	body.get_node("CollisionShape2D").queue_free()
 	timer.start()
+	body.animated_sprite.play("death")
 
 
 func _on_timer_timeout():
