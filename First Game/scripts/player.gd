@@ -49,11 +49,7 @@ func _physics_process(delta):
 		else:
 			animated_sprite.play("run")
 	else:
-		# Player is in the air - Check vertical direction
-		if velocity.y < 0:
-			animated_sprite.play("Jump")
-		else:
-			animated_sprite.play("death")
+		animated_sprite.play("Jump")
 	
 	# Apply movement
 	if direction:
