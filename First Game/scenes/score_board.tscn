@@ -13,6 +13,10 @@ font_size = 8
 font = ExtResource("2_qnge1")
 font_size = 8
 
+[sub_resource type="LabelSettings" id="LabelSettings_game_over"]
+font = ExtResource("2_qnge1")
+font_size = 16
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnf6i"]
 texture = ExtResource("3_t8f0e")
 0:0/0 = 0
@@ -66,6 +70,25 @@ offset_right = 525.0
 offset_bottom = 371.0
 text = "Time:"
 label_settings = SubResource("LabelSettings_qnge1")
+
+[node name="LivesLabel" type="Label" parent="."]
+z_index = 1
+offset_left = 260.0
+offset_top = 348.0
+offset_right = 320.0
+offset_bottom = 371.0
+text = "Lives: 3"
+label_settings = SubResource("LabelSettings_qnge1")
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+z_index = 3
+offset_left = 220.0
+offset_top = 140.0
+offset_right = 420.0
+offset_bottom = 170.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_game_over")
 
 [node name="Icons" type="TileMapLayer" parent="."]
 z_index = 2
