@@ -18,6 +18,10 @@ config/stretch/mode="disabled"
 config/size/viewport_height=648
 config/size/viewport_width=1152
 
+[audio]
+
+buses/default_bus_layout="res://interact/default_bus_layout.tres"
+
 [autoload]
 
 Music="*res://scenes/music.tscn"
