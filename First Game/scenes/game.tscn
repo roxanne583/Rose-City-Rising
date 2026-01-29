@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=4 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=169 format=4 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" uid="uid://dxuf40asaxghr" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://dlpa625860dy6" path="res://assets/sprites/Cave Background/Background-1.png" id="30_twgab"]
 [ext_resource type="Texture2D" uid="uid://eqyl3f4e8yf0" path="res://assets/sprites/Character-Green-Man.png" id="31_02fa5"]
 [ext_resource type="Script" uid="uid://b1sp82csprsm1" path="res://scenes/greenman.gd" id="32_nepv3"]
+[ext_resource type="Script" uid="uid://qd02dnj02cxt" path="res://scripts/checkpoint.gd" id="36_twgab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgl2t"]
 texture = ExtResource("4_e1j6l")
@@ -11144,6 +11145,12 @@ animations = [{
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cn5tm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02fa5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nepv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7025r"]
+
 [node name="Level" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -11196,7 +11203,58 @@ position = Vector2(1243, -32)
 
 [node name="Can" parent="Physical/Cans" instance=ExtResource("4_28cek")]
 z_index = 50
-position = Vector2(1392, -98)
+position = Vector2(174, 23)
+scale = Vector2(2, 2)
+
+[node name="Can2" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(231, 23)
+scale = Vector2(2, 2)
+
+[node name="Can3" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(310, 51)
+scale = Vector2(2, 2)
+
+[node name="Can4" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(690, 55)
+scale = Vector2(2, 2)
+
+[node name="Can5" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(856, 57)
+scale = Vector2(2, 2)
+
+[node name="Can6" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(1325, -60)
+scale = Vector2(2, 2)
+
+[node name="Can7" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(1294, -60)
+scale = Vector2(2, 2)
+
+[node name="Can8" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(1359, -60)
+scale = Vector2(2, 2)
+
+[node name="Can9" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(1442, -114)
+scale = Vector2(2, 2)
+
+[node name="Can10" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(1479, -115)
+scale = Vector2(2, 2)
+
+[node name="Can11" parent="Physical/Cans" instance=ExtResource("4_28cek")]
+z_index = 50
+position = Vector2(1515, -117)
+scale = Vector2(2, 2)
 
 [node name="Platforms" type="Node" parent="Physical"]
 
@@ -11397,3 +11455,25 @@ drag_vertical_enabled = true
 [node name="Node" type="Node" parent="."]
 
 [node name="Node2" type="Node" parent="."]
+
+[node name="Checkpoint 1" type="Area2D" parent="."]
+position = Vector2(2225, 80)
+collision_mask = 3
+script = ExtResource("36_twgab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint 1"]
+shape = SubResource("RectangleShape2D_02fa5")
+
+[node name="Checkpoint 2" type="Area2D" parent="."]
+script = ExtResource("36_twgab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint 2"]
+shape = SubResource("RectangleShape2D_nepv3")
+
+[node name="Checkpoint 3" type="Area2D" parent="."]
+script = ExtResource("36_twgab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint 3"]
+shape = SubResource("RectangleShape2D_7025r")
+
+[connection signal="body_entered" from="Checkpoint 1" to="Checkpoint 1" method="_on_body_entered"]

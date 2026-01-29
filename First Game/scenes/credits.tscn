@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://cugp2270tomm1"]
+
+[ext_resource type="Script" uid="uid://bq7s0n1f20ac3" path="res://scripts/credits.gd" id="1_credits"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_font"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = ExtResource("2_font")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_body"]
+font = ExtResource("2_font")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_credits")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.03, 0.03, 0.05, 1)
+
+[node name="CreditsScroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 50.0
+offset_right = -39.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsVBox" type="VBoxContainer" parent="CreditsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CreditsScroll/CreditsVBox"]
+layout_mode = 2
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="SpacerTop" type="Control" parent="CreditsScroll/CreditsVBox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="Body" type="Label" parent="CreditsScroll/CreditsVBox"]
+layout_mode = 2
+text = "Game Design
+All of us!
+
+Project Organizer
+Roxanne Seaton
+
+Programming
+Aventurine Atalanta
+Roxanne Seaton
+
+Art
+Roxanne Seaton
+Cormac
+Vincent Romero
+Aventurine Atalanta
+
+Music
+Noah
+
+With Community Support From 
+P;ear
+"
+label_settings = SubResource("LabelSettings_body")
+horizontal_alignment = 1
+
+[node name="SpacerBottom" type="Control" parent="CreditsScroll/CreditsVBox"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = 303.0
+offset_right = -58.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "Back - B"
