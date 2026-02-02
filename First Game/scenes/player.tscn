@@ -1,12 +1,24 @@
-[gd_scene load_steps=36 format=3 uid="uid://dqnaqj8yb6hwd"]
+[gd_scene load_steps=39 format=3 uid="uid://dqnaqj8yb6hwd"]
 
 [ext_resource type="Script" uid="uid://dhojb01i6t155" path="res://scripts/player.gd" id="1_ofpvf"]
-[ext_resource type="Texture2D" uid="uid://bm668k6k0oh8n" path="res://assets/sprites/Violet-jump.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://b3s8mlk302301" path="res://assets/sprites/Violet-jump.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://bqji23cdjhoxk" path="res://assets/sprites/Character-1-Violet.png" id="2_qhqgy"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
+atlas = ExtResource("2_g2els")
+region = Rect2(154, 0, 77, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
+atlas = ExtResource("2_g2els")
+region = Rect2(231, 0, 77, 76)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(225, 300, 75, 75)
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 77, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_487ah"]
+atlas = ExtResource("2_g2els")
+region = Rect2(77, 0, 77, 76)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("2_qhqgy")
@@ -128,11 +140,32 @@ region = Rect2(375, 150, 75, 75)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_md1ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_gl8cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_487ah")
 }],
 "loop": true,
 "name": &"Jump",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -267,7 +300,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(42, 68)
+size = Vector2(51, 68.9)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -277,12 +310,12 @@ script = ExtResource("1_ofpvf")
 [node name="Violet" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ur7pv")
-animation = &"death"
+animation = &"Jump"
 autoplay = "idle"
-frame_progress = 0.9347952
+frame_progress = 0.35519338
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(-1.5, 3)
 shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="JumpHeightTimer" type="Timer" parent="."]

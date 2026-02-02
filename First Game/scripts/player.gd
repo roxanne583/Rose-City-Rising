@@ -5,16 +5,16 @@ const MAX_SPEED = 300.0
 const ACCEL = 900.0
 const DECEL = 500.0
 const TURN_DECEL = 500.0
-const AIR_CONTROL = 0.4
-const JUMP_BASE = 100.0
-const JUMP_SPEED_BOOST = 540.0
+const AIR_CONTROL = 1
+const JUMP_BASE = 500.0
+const JUMP_SPEED_BOOST = 100.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var double_jump = 1
 var double_jump_count = 1
-var jump_release_force = -40
-var jump_force = -160
+var jump_release_force = 0
+var jump_force = 0
 
 @onready var animated_sprite = $Violet
 

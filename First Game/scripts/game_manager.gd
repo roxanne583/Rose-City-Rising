@@ -8,11 +8,11 @@ extends Node
 @onready var player = get_node_or_null("%Player")
 
 @export var max_lives := 3
-@export var start_time := 180
+@export var start_time := 500
 @export var countdown_enabled := true
 
 var current_score := 0
-var current_time := 180
+var current_time := start_time
 var current_lives := 3
 var spawn_position := Vector2.ZERO
 var game_over := false
@@ -39,7 +39,8 @@ func add_score(amount := 0):
 	current_score += amount
 	update_score_label()
 
-func set_time(time := 180):
+#time is hardcoded - changing to variable
+func set_time(time := start_time):
 	current_time = time
 	update_time_label()
 	if current_time <= 0:
