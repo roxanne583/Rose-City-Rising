@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="First Game"
-run/main_scene="uid://cr7nqcfqu5xk1"
+config/name="Rose City Rising"
+run/main_scene="uid://cuv4vme4rwno0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 config/stretch/mode="disabled"
