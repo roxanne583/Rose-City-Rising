@@ -6,8 +6,7 @@ const ACCEL = 900.0
 const DECEL = 500.0
 const TURN_DECEL = 500.0
 const AIR_CONTROL = 1
-const JUMP_BASE = 500.0
-const JUMP_SPEED_BOOST = 100.0
+const JUMP_BASE = 555.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -15,6 +14,8 @@ var double_jump = 1
 var double_jump_count = 1
 var jump_release_force = 0
 var jump_force = 0
+var has_playdate := false
+var has_donut := false
 
 @onready var animated_sprite = $Violet
 
@@ -27,10 +28,9 @@ func _physics_process(delta):
 	# Get the input direction: -1,0,1
 	var direction = Input.get_axis("move_left", "move_right")
 
-	# Handle Jump (speed affects jump height)
+	# Handle Jump (constant ollie height)
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		var speed_ratio = clamp(abs(velocity.x) / MAX_SPEED, 0.0, 1.0)
-		velocity.y = -(JUMP_BASE + JUMP_SPEED_BOOST * speed_ratio)
+		velocity.y = -JUMP_BASE
 		animated_sprite.play("Jump")
 	 
 		# Flip the Sprite
