@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://4y0iag1d8ktc"]
 
-[ext_resource type="Script" uid="uid://ddic0iey0mmvg" path="res://scripts/coin.gd" id="1_ix6bn"]
+[ext_resource type="Script" path="res://scripts/doughnut.gd" id="1_ix6bn"]
 [ext_resource type="Texture2D" uid="uid://bic3osxkltpg" path="res://assets/sprites/pickup.png" id="2_11l1o"]
 [ext_resource type="AudioStream" uid="uid://cu0urj2sa833j" path="res://assets/sounds/doughnut.wav" id="3_11l1o"]
 

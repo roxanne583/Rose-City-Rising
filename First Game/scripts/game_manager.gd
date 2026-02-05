@@ -5,18 +5,27 @@ extends Node
 @onready var time_label = score_board.get_node_or_null("TimeLabel") if score_board else null
 @onready var lives_label = score_board.get_node_or_null("LivesLabel") if score_board else null
 @onready var game_over_label = score_board.get_node_or_null("GameOverLabel") if score_board else null
+@onready var victory_label = score_board.get_node_or_null("VictoryLabel") if score_board else null
 @onready var player = get_node_or_null("%Player")
+
+const CAN_POINTS = 10
+const TRICK_POINTS = 20
+const DOUGHNUT_POINTS = 50
 
 @export var max_lives := 3
 @export var start_time := 500
 @export var countdown_enabled := true
 
+var base_score := 0
 var current_score := 0
 var current_time := start_time
 var current_lives := 3
 var spawn_position := Vector2.ZERO
 var game_over := false
+var victory := false
 var countdown_timer: Timer = null
+var light_switches_activated := 0
+var activated_switches := {}
 
 func _ready():
 	add_to_group("game_manager")
@@ -28,15 +37,42 @@ func _ready():
 	update_time_label()
 	update_lives_label()
 	hide_game_over()
+	hide_victory()
 	if countdown_enabled:
 		start_countdown()
 
 func set_score(score := 0):
+	base_score = score
 	current_score = score
 	update_score_label()
 
 func add_score(amount := 0):
-	current_score += amount
+	base_score += amount
+	current_score = base_score
+	update_score_label()
+
+func add_trick_score():
+	add_score(TRICK_POINTS)
+
+func register_light_switch(switch_id: int):
+	if activated_switches.has(switch_id):
+		return
+	activated_switches[switch_id] = true
+	light_switches_activated += 1
+
+func _get_score_multiplier(include_time := false) -> float:
+	var multiplier := 1.0
+	if player and player.has_donut:
+		multiplier *= 1.5
+	if light_switches_activated > 0:
+		multiplier *= pow(1.5, light_switches_activated)
+	if include_time:
+		multiplier *= max(current_time, 0)
+	return multiplier
+
+func finalize_score():
+	var multiplier = _get_score_multiplier(true)
+	current_score = int(round(base_score * multiplier))
 	update_score_label()
 
 #time is hardcoded - changing to variable
@@ -110,6 +146,18 @@ func trigger_game_over():
 	if player:
 		player.set_physics_process(false)
 
+func trigger_victory():
+	if victory:
+		return
+	victory = true
+	if countdown_timer:
+		countdown_timer.stop()
+	hide_game_over()
+	finalize_score()
+	show_victory()
+	if player:
+		player.set_physics_process(false)
+
 func show_game_over():
 	if game_over_label:
 		game_over_label.visible = true
@@ -117,3 +165,11 @@ func show_game_over():
 func hide_game_over():
 	if game_over_label:
 		game_over_label.visible = false
+
+func show_victory():
+	if victory_label:
+		victory_label.visible = true
+
+func hide_victory():
+	if victory_label:
+		victory_label.visible = false

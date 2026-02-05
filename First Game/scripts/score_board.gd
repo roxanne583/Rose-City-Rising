@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var time_label = $TimeLabel
 @onready var lives_label = $LivesLabel
 @onready var game_over_label = $GameOverLabel
+@onready var victory_label = $VictoryLabel
 var start_time : int
 
 
@@ -16,6 +17,7 @@ func _ready():
 	update_time_label()
 	update_lives_label()
 	hide_game_over()
+	hide_victory()
 
 func set_score(score := 0):
 	current_score = score
@@ -48,3 +50,9 @@ func show_game_over():
 
 func hide_game_over():
 	game_over_label.visible = false
+
+func show_victory():
+	victory_label.visible = true
+
+func hide_victory():
+	victory_label.visible = false

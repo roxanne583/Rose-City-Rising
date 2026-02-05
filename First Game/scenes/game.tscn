@@ -1,4 +1,4 @@
-[gd_scene load_steps=234 format=4 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=236 format=4 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" uid="uid://dxuf40asaxghr" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://4y0iag1d8ktc" path="res://scenes/doughnut.tscn" id="6_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://d2w2i5h0lhc6l" path="res://scenes/slime.tscn" id="6_l0s6b"]
 [ext_resource type="PackedScene" uid="uid://13bxb8josfp1" path="res://scenes/score_board.tscn" id="9_score"]
+[ext_resource type="PackedScene" path="res://scenes/panic_npc.tscn" id="9_panic"]
+[ext_resource type="PackedScene" path="res://scenes/quest_giver.tscn" id="9_quest"]
 [ext_resource type="Texture2D" uid="uid://dby8iwhi2k1vo" path="res://assets/sprites/Buildings.png" id="10_8qswn"]
 [ext_resource type="Texture2D" uid="uid://bps4gvc3hrsvk" path="res://assets/sprites/6th-Flanders-Tileset.png" id="10_vtaks"]
 [ext_resource type="Texture2D" uid="uid://eux76umefjkk" path="res://assets/sprites/bg-eastside.png" id="12_kvuet"]
@@ -22304,6 +22306,9 @@ script = ExtResource("36_twgab")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint 3"]
 shape = SubResource("RectangleShape2D_7025r")
 
+[node name="PanicNPC" parent="." instance=ExtResource("9_panic")]
+position = Vector2(13450, -16)
+
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
@@ -22435,6 +22440,10 @@ position = Vector2(1747, 89)
 [node name="Player" parent="Physical/Characters" instance=ExtResource("1_rbmkf")]
 z_index = 13
 position = Vector2(-356, 74)
+
+[node name="QuestGiver" parent="Physical/Characters" instance=ExtResource("9_quest")]
+z_index = 13
+position = Vector2(-260, 74)
 
 [node name="Camera2D" type="Camera2D" parent="Physical/Characters/Player"]
 limit_left = -10000017
