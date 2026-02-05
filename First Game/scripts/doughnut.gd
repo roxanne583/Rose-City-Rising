@@ -4,5 +4,7 @@ extends Area2D
 @onready var animation_player = $AnimationPlayer
 
 func _on_body_entered(body):
-	game_manager.add_score(game_manager.CAN_POINTS)
+	if body.name == "Player":
+		body.has_donut = true
+	game_manager.add_score(game_manager.DOUGHNUT_POINTS)
 	animation_player.play("pickup")

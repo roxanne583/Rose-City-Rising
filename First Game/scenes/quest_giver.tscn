@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=4]
+
+[ext_resource type="Script" path="res://scripts/quest_giver.gd" id="1_v6k2p"]
+[ext_resource type="Texture2D" uid="uid://eqyl3f4e8yf0" path="res://assets/sprites/Character-Green-Man.png" id="2_0u7m3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4q7qf"]
+size = Vector2(64, 64)
+
+[node name="QuestGiver" type="Area2D"]
+script = ExtResource("1_v6k2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0u7m3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4q7qf")
+
+[node name="Dialogue" type="AcceptDialog" parent="."]
+visible = false
