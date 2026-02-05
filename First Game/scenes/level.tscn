@@ -1,18 +1,17 @@
-[gd_scene load_steps=40 format=4 uid="uid://c45wrm2s51re6"]
+[gd_scene load_steps=39 format=4 uid="uid://c45wrm2s51re6"]
 
 [ext_resource type="Script" uid="uid://dxuf40asaxghr" path="res://scripts/game_manager.gd" id="1_ux5qa"]
-[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_82cfe"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="3_gunhw"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="4_8gofh"]
 [ext_resource type="Texture2D" uid="uid://d1fs5rlnjc78a" path="res://assets/sprites/Platforms-001.png" id="5_h6wmr"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="6_pqd0y"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="7_5k0ak"]
-[ext_resource type="PackedScene" uid="uid://dfol6bn1ed400" path="res://scenes/can.tscn" id="8_wu01b"]
+[ext_resource type="PackedScene" uid="uid://w4nab4aexub2" path="res://scenes/can.tscn" id="8_wu01b"]
 [ext_resource type="PackedScene" uid="uid://bgv5v2fxqlswe" path="res://scenes/platform.tscn" id="9_3ies3"]
-[ext_resource type="Script" uid="uid://cdrchqd0wvqfv" path="res://scenes/platform-2.gd" id="10_xy2fk"]
+[ext_resource type="Script" uid="uid://cdrchqd0wvqfv" path="res://scripts/platform-2.gd" id="10_xy2fk"]
 [ext_resource type="PackedScene" uid="uid://d2w2i5h0lhc6l" path="res://scenes/slime.tscn" id="11_cmcjb"]
-[ext_resource type="PackedScene" uid="uid://bh7kgbpwbygkh" path="res://scenes/score_board.tscn" id="12_score"]
 [ext_resource type="Texture2D" uid="uid://d0rpkhm51dhru" path="res://assets/sprites/6th-Flanders-Tileset-2.png" id="12_556r4"]
+[ext_resource type="PackedScene" uid="uid://13bxb8josfp1" path="res://scenes/score_board.tscn" id="12_score"]
 [ext_resource type="Texture2D" uid="uid://d1gbh6y8xby8m" path="res://assets/sprites/mt_hood.png" id="13_7agi7"]
 [ext_resource type="Texture2D" uid="uid://88q7rqtpb7r3" path="res://assets/sprites/clouds-sunset.png" id="14_kih21"]
 [ext_resource type="Texture2D" uid="uid://bjo6p3m6pw3rr" path="res://assets/sprites/eastside-skyline.png" id="15_w3o6u"]
@@ -3415,6 +3414,7 @@ theme_override_fonts/font = ExtResource("3_gunhw")
 theme_override_font_sizes/font_size = 8
 text = "6th n Flanders
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Labels"]
 offset_left = 368.0
@@ -3425,6 +3425,7 @@ theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("3_gunhw")
 theme_override_font_sizes/font_size = 8
 text = "Falling hurts..."
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Labels"]
 offset_left = 704.0
@@ -3435,6 +3436,7 @@ theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_fonts/font = ExtResource("3_gunhw")
 theme_override_font_sizes/font_size = 8
 text = "Almost there..."
+metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="Labels"]
 offset_left = 520.0
@@ -3446,6 +3448,7 @@ theme_override_fonts/font = ExtResource("3_gunhw")
 theme_override_font_sizes/font_size = 8
 text = "Great job!"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)

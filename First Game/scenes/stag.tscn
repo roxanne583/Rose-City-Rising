@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://2k0ugsqvv1w0"]
 
-[ext_resource type="Script" uid="uid://goe1lbji33as" path="res://stag.gd" id="1_4qv3t"]
+[ext_resource type="Script" uid="uid://goe1lbji33as" path="res://scripts/stag.gd" id="1_4qv3t"]
 [ext_resource type="Texture2D" uid="uid://csmmeuuvubcvj" path="res://assets/sprites/stag-run.png" id="2_o6nqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxxkn"]
