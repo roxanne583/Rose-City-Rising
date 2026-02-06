@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://2cuv521f7abd"]
 
-[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_ry8na"]
+[ext_resource type="Script" uid="uid://ck5rxtb3eb25n" path="res://scripts/start_menu.gd" id="1_ry8na"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_7c3xv"]
 [ext_resource type="Texture2D" uid="uid://eux76umefjkk" path="res://assets/sprites/bg-eastside.png" id="2_nxjfj"]
 [ext_resource type="Texture2D" uid="uid://88q7rqtpb7r3" path="res://assets/sprites/clouds-sunset.png" id="3_u4qax"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=4]
+[gd_scene load_steps=4 format=3 uid="uid://b3pshrxm3dle7"]
 
-[ext_resource type="Script" path="res://scripts/panic_npc.gd" id="1_l8w1u"]
+[ext_resource type="Script" uid="uid://cyb84352dcttm" path="res://scripts/panic_npc.gd" id="1_l8w1u"]
 [ext_resource type="Texture2D" uid="uid://eqyl3f4e8yf0" path="res://assets/sprites/Character-Green-Man.png" id="2_0u7m3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p7fe"]
@@ -10,10 +10,10 @@ size = Vector2(64, 64)
 script = ExtResource("1_l8w1u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_0u7m3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6p7fe")
 
 [node name="Dialogue" type="AcceptDialog" parent="."]
-visible = false
