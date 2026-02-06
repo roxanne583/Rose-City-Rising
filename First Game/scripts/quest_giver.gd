@@ -1,8 +1,8 @@
 extends Area2D
 
-@export var intro_text := "Welcome to Rose CIty Rising! Can you do me favor and skate across town and pick up a \"Playdate\" from \"Panic\". I'll save you a plate from P;ear. Thanks friend!"
-@export var reminder_text := "Is everything good pal? You should hurry and pickup the \"Playdate\" before P;ear closes."
-@export var completion_text := "Thanks friend! You were so fast and cool! I'm glad we met. Here's that plate I saved you."
+@export var intro_text := "We need to pickup \"Playdates\" from \"Panic!\" in downtown. Let's skate"
+@export var reminder_text := "Is everything good pal? You should hurry and pickup the \"Playdate\" before p:ear closes."
+@export var completion_text := "You rock! Wired Wednesday will be happy. Let's see what p:ear's skate club is up to."
 
 @onready var dialogue = $Dialogue
 @onready var game_manager = %GameManager
