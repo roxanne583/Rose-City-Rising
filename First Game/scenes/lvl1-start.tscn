@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cm5c76urry5wn"]
+
+[node name="Titlescreen" type="Node2D"]
+
+[node name="LevelBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 110.0
+offset_bottom = 110.0
+
+[node name="PanelContainer" type="PanelContainer" parent="LevelBox"]
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 110.0
+
+[node name="Label" type="Label" parent="LevelBox/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="PanelContainer" parent="LevelBox/PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LevelBox/PanelContainer/MarginContainer"]
+layout_mode = 2
