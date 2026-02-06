@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var dialogue_text := "You made it, Heres the \"Playdate\" for you to take back to P;ear"
+@export var dialogue_text := "You made it, Heres the \"Playdate\" for you to take back to P:ear"
 
 @onready var dialogue = $Dialogue
 
