@@ -57,34 +57,60 @@ layout_mode = 2
 [node name="Body" type="Label" parent="CreditsScroll/CreditsVBox"]
 layout_mode = 2
 text = "Game Design
+------------
+
 All of us!
 
-Project Organizer
+
+Project Management
+------------
+
 Roxanne Seaton
-Wired Wednesday
+Violet Aveline
+
+p:ear's Wired Wednesday
+
 
 Story
+------------
+
 Precious
 Ozzy
 
-Game Development
+
+Game Programmers
+------------
+
 Aventurine Atalanta
 Roxanne Seaton
 
+
 Art
+------------
+
 Roxanne Seaton
 Cormac
 Vincent Romero
 Aventurine Atalanta
+Precious
+
 
 Music
+------------
+
 Noah
 
-With Community Support From 
-P;ear
-"
+
+Made possible with partnership from 
+p:ear
+
+
+Thank you to Panic! 
+for hosting our 
+godot class in 2025"
 label_settings = SubResource("LabelSettings_body")
 horizontal_alignment = 1
+uppercase = true
 
 [node name="SpacerBottom" type="Control" parent="CreditsScroll/CreditsVBox"]
 custom_minimum_size = Vector2(0, 200)
