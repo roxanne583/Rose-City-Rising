@@ -89,6 +89,7 @@ func lose_life():
 	update_lives_label()
 	if current_lives <= 0:
 		trigger_game_over()
+		
 
 func respawn_player(victim: Node):
 	if game_over:
@@ -160,7 +161,7 @@ func trigger_victory():
 
 func show_game_over():
 	if game_over_label:
-		game_over_label.visible = true
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over.tscn")
 
 func hide_game_over():
 	if game_over_label:

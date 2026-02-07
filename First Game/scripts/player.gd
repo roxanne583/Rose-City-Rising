@@ -17,8 +17,12 @@ var jump_force = 0
 var has_playdate := false
 var has_donut := false
 
+
 @onready var animated_sprite = $Violet
 
+func play_lose_life_anim():
+	animated_sprite.play("death")
+		
 # Main Player Controls	
 func _physics_process(delta):
 	# Add the gravity.
