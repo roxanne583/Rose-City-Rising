@@ -18,7 +18,7 @@ func _ready():
 	dialogue.confirmed.connect(_on_dialogue_confirmed)
 	_show_intro()
 
-func _process(delta):
+func _process(_delta):
 	if not player:
 		return
 	if dialogue.visible:

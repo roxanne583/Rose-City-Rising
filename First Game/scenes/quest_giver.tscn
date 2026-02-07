@@ -83,7 +83,6 @@ mode = 1
 title = "Let's skate"
 position = Vector2i(110, 240)
 size = Vector2i(510, 80)
-visible = true
 ok_button_text = "Dope"
 dialog_text = "We need to pickup playdates from Panic! in downtown."
 dialog_autowrap = true

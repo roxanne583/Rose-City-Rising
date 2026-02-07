@@ -9,7 +9,7 @@ func _ready():
 	lvl1.grab_focus()
 	
 func _on_lvl1_pressed():
-	get_tree().change_scene_to_file("res://scenes/level1-title.tscn")
+	get_tree().change_scene_to_file("res://scenes/Start_animation_lvl1.tscn")
 
 
 func _on_back_pressed():

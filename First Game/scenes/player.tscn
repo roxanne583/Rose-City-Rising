@@ -200,7 +200,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -310,9 +310,9 @@ script = ExtResource("1_ofpvf")
 [node name="Violet" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ur7pv")
-animation = &"Jump"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.35519338
+frame_progress = 0.45050704
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 3)
