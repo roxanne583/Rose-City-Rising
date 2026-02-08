@@ -1161,35 +1161,35 @@ offset_right = 399.0
 offset_bottom = 253.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_4s2w8")
-text = "back 2 
-p:ear"
+text = "p:ear"
 
 [node name="Credits" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
 offset_left = 383.0
-offset_top = 77.0
+offset_top = 48.0
 offset_right = 555.0
-offset_bottom = 305.0
+offset_bottom = 276.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 13
-text = "Noah
-Aventurine 
-Vincent Romero
-Precious
-Roxanne Seaton
-Cormac Powers
-Violet Aveline
-Wired Wednesday @pear
-Art Social Club"
+text = "Welcome to our demo
+built by local creatives
+for Winter Lights Festival
+2024.
+
+
+You're Violet picking up 
+playdates from Panic!
+and bringing them back
+to p:ear."
 
 [node name="Credit Header" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 392.0
-offset_top = 47.0
-offset_right = 524.0
-offset_bottom = 68.0
+offset_left = 385.0
+offset_top = 147.0
+offset_right = 523.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_4s2w8")
-text = "Built by:"
+text = "Objective"
