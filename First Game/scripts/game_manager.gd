@@ -28,6 +28,8 @@ var light_switches_activated := 0
 var activated_switches := {}
 
 func _ready():
+	Engine.time_scale = 1.0
+	get_tree().paused = false
 	add_to_group("game_manager")
 	if player:
 		spawn_position = player.global_position
