@@ -33,6 +33,10 @@ window/size/viewport_height=360
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
+[gui]
+
+theme/custom_font="uid://c53kogtyjwsss"
+
 [input]
 
 ui_accept={
@@ -105,3 +109,4 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
