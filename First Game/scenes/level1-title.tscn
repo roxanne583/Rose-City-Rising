@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://x0s3bdk1qetn"]
+[gd_scene load_steps=12 format=4 uid="uid://x0s3bdk1qetn"]
 
 [ext_resource type="Script" uid="uid://g30p5cx4485" path="res://scripts/level_1_title.gd" id="1_w3ekv"]
 [ext_resource type="Texture2D" uid="uid://clxrxgvu12rwi" path="res://assets/sprites/UI/Ui-lvl-title-overlay.png" id="2_w3ekv"]
 [ext_resource type="Texture2D" uid="uid://hc30v8tmvh4l" path="res://assets/sprites/UI/Ui-lvl-title.png" id="3_g8o48"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_4s2w8"]
+[ext_resource type="FontFile" uid="uid://uoaunww7uf14" path="res://assets/fonts/MonaSans-SemiBold.ttf" id="6_g8o48"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_xomen"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kgbn"]
@@ -1171,6 +1172,7 @@ offset_top = 48.0
 offset_right = 555.0
 offset_bottom = 276.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_g8o48")
 theme_override_font_sizes/font_size = 13
 text = "Welcome to our demo
 built by local creatives
