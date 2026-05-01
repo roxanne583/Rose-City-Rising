@@ -1,9 +1,11 @@
 extends Control
 
-@onready var menu_button = %MenuButton
+@onready var menu_button = $VBoxContainer/HBoxContainer/MenuButton
 
+func _ready():
+
+	menu_button.pressed.connect(_on_menu_button_pressed)
 
 func _on_menu_button_pressed():
-	Engine.time_scale = 1.0
-	get_tree().paused = false
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/start_menu.tscn")
+
+	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")

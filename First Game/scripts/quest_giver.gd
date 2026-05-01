@@ -1,8 +1,8 @@
 extends Area2D
 
-@export var intro_text := "We need to pickup \"Playdates\"..."
+@export var intro_text := "Welcome to p:ear! We need to pickup \"Playdates\" from Panic! in downtown"
 
-@export var reminder_text := "Is everything good pal?"
+@export var reminder_text := "Time is running out get to Panic!?"
 
 @export var completion_text := "You rock!"
 

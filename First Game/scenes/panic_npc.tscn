@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://b3pshrxm3dle7"]
+[gd_scene load_steps=16 format=4 uid="uid://b3pshrxm3dle7"]
 
 [ext_resource type="Script" uid="uid://cyb84352dcttm" path="res://scripts/panic_npc.gd" id="1_l8w1u"]
 [ext_resource type="Texture2D" uid="uid://bi8icyopgqlqa" path="res://assets/sprites/character-1-panic.png" id="2_0cqol"]
 [ext_resource type="Texture2D" uid="uid://d0rpkhm51dhru" path="res://assets/sprites/6th-Flanders-Tileset-2.png" id="3_0cqol"]
 [ext_resource type="Texture2D" uid="uid://dcddgyaa3opi4" path="res://assets/sprites/old-town-2.png" id="3_241rc"]
+[ext_resource type="FontFile" uid="uid://uoaunww7uf14" path="res://assets/fonts/MonaSans-SemiBold.ttf" id="5_241rc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hyg8y"]
 atlas = ExtResource("2_0cqol")
@@ -106,20 +107,33 @@ size = Vector2(64, 64)
 [node name="PanicNPC" type="Area2D"]
 script = ExtResource("1_l8w1u")
 
-[node name="Dialogue" type="AcceptDialog" parent="."]
-oversampling_override = 1.0
-mode = 1
-title = "Hey Violet!"
-position = Vector2i(180, 240)
-size = Vector2i(463, 80)
-visible = true
-max_size = Vector2i(620, 16384)
-ok_button_text = "Score"
-dialog_text = "Here are your playdates! Get back to p:ear safely."
-dialog_autowrap = true
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 160)
+offset_left = 230.0
+offset_top = 277.0
+offset_right = 507.0
+offset_bottom = 437.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_241rc")
+text = "Hey Violet! Here are your playdates. 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogCloseButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Skate Back"
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-visible = false
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 455.0
@@ -144,5 +158,6 @@ tile_map_data = PackedByteArray("AAAAABAAAAALAAkAAAAAABEAAAALAAkAAAAAABIAAAALAAk
 tile_set = SubResource("TileSet_0cqol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(55, 302)
 shape = SubResource("RectangleShape2D_6p7fe")

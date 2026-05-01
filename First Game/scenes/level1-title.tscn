@@ -1167,31 +1167,31 @@ text = "p:ear"
 [node name="Credits" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 383.0
+offset_left = 373.0
 offset_top = 48.0
-offset_right = 555.0
+offset_right = 566.0
 offset_bottom = 276.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_g8o48")
 theme_override_font_sizes/font_size = 13
-text = "Welcome to our demo
-built by local creatives
-for Winter Lights Festival
-2026.
+text = "Created by Art Social Club:
+craft-happens.com
+Produced by pop-rox.com
+Game Design: 
+p:ear Wired Wed
 
-
-You're Violet picking up 
-playdates from Panic!
-and bringing them back
-to p:ear."
+Roxanne - Game Dev, Art
+Aven - Game Dev
+Inkmoth - Art
+Sound - Noah"
 
 [node name="Credit Header" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 385.0
-offset_top = 147.0
-offset_right = 523.0
-offset_bottom = 168.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 199.0
+offset_top = 53.0
+offset_right = 337.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.8270784, 0.11502371, 2.8878452e-07, 1)
 theme_override_fonts/font = ExtResource("5_4s2w8")
 text = "Objective"
