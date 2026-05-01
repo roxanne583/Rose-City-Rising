@@ -2,18 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dng8axlyirk5m" path="res://scripts/dialogue_ui.gd" id="1_dwk8m"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_dwk8m")
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_direction = 2
 anchors_preset = 7
 anchor_left = 0.5
@@ -26,16 +18,15 @@ offset_right = 221.20502
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
+[node name="Label" type="Label" parent="PanelContainer"]
 custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Welcome to p:ear
-
-We need to pickup playdates from Panic! in downtown PDX."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Button" type="Button" parent="CanvasLayer/PanelContainer"]
+[node name="Button" type="Button" parent="PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 text = "Dope"
