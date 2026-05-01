@@ -25,6 +25,8 @@ buses/default_bus_layout="res://interact/default_bus_layout.tres"
 [autoload]
 
 Music="*res://scenes/music.tscn"
+DialogueManager="*res://scripts/dialogue_manager.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
@@ -109,4 +111,6 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+camera/depth_of_field/depth_of_field_use_jitter=true
 2d/snap/snap_2d_transforms_to_pixel=true

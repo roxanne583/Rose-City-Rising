@@ -1,10 +1,8 @@
 extends Control
 
-
 @onready var dialog_button: Button = $CenterContainer/VBoxContainer/DialogCloseButton
 
 func _ready():
-	dialog_button.pressed.connect(_on_dialog_close_pressed)
 	dialog_button.grab_focus()
 
 func _on_dialog_close_pressed():
