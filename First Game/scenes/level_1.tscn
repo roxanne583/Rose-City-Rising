@@ -1,8 +1,7 @@
-[gd_scene load_steps=244 format=4 uid="uid://cm5c76urry5wn"]
+[gd_scene load_steps=242 format=4 uid="uid://cm5c76urry5wn"]
 
 [ext_resource type="Script" uid="uid://dxuf40asaxghr" path="res://scripts/game_manager.gd" id="1_1s4pk"]
 [ext_resource type="Script" path="res://scripts/checkpoint.gd" id="1_lkded"]
-[ext_resource type="PackedScene" uid="uid://b3pshrxm3dle7" path="res://scenes/panic_npc.tscn" id="2_ensge"]
 [ext_resource type="Texture2D" uid="uid://c824bvqwncde8" path="res://assets/sprites/Platforms-002.png" id="5_qb2q0"]
 [ext_resource type="Texture2D" uid="uid://d1fs5rlnjc78a" path="res://assets/sprites/Platforms-001.png" id="5_so66j"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="6_tr1x6"]
@@ -26,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://y16gn2ufporh" path="res://assets/sprites/water.png" id="16_nossa"]
 [ext_resource type="Texture2D" uid="uid://bps4gvc3hrsvk" path="res://assets/sprites/6th-Flanders-Tileset.png" id="17_hjqri"]
 [ext_resource type="Script" uid="uid://b1sp82csprsm1" path="res://scripts/greenman.gd" id="17_n50md"]
-[ext_resource type="PackedScene" uid="uid://8mvmy11dr0h3" path="res://scenes/quest_giver.tscn" id="21_mteb0"]
 [ext_resource type="Texture2D" uid="uid://cxa3ga30wmsjc" path="res://assets/sprites/BigPink2.png" id="22_ensge"]
 [ext_resource type="Texture2D" uid="uid://mesegiwggpxq" path="res://assets/sprites/Benson-Broadway-Oak.png" id="23_7dh7s"]
 [ext_resource type="Texture2D" uid="uid://c7p6m6qamu3c5" path="res://assets/sprites/cross-sections.png" id="24_ymcg8"]
@@ -24703,13 +24701,5 @@ z_index = 3
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AAD2AO7/AAABAB0AAADcAPj/AAAGABIAAAAUAd3/AQAWAAAAAAACAer/AQAXAAUAAAADAef/AQAXAAsAAAD9AO3/AQACAAwAAAD7AOn/AQACAAgAAAARAeD/AQACABEAAAANAeP/AQAXAA8AAAAGAeP/AQAOABAAAADwAPP/AQAJAAIAAAAkAdj/AQABAAMAAAD7APb/AQARAAEAAABYA/j/AAAGABIAAABOA/n/AAASABIAADBEA/b/AAAGABIAAABRA/P/AQACAAgAAABjA/b/AQAJAAIAAABqA/b/AQARAAsAAABEA+7/AQACABEAAAB0A/X/AQABAAMAAAAFA/b/AQACABEAAAA=")
 tile_set = SubResource("TileSet_5rp4o")
-
-[node name="QuestGiver" parent="." instance=ExtResource("21_mteb0")]
-z_index = 13
-position = Vector2(-260, 74)
-script = null
-
-[node name="PanicNPC" parent="." instance=ExtResource("2_ensge")]
-position = Vector2(-677, -113)
 
 [connection signal="body_entered" from="GameManager/Checkpoints/Checkpoint 1" to="GameManager/Checkpoints/Checkpoint 1" method="_on_body_entered"]
