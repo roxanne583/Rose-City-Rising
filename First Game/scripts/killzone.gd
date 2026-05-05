@@ -19,7 +19,8 @@ func _on_body_entered(body):
 	victim = body
 	var collision_shape = body.get_node_or_null("CollisionShape2D")
 	if collision_shape:
-		collision_shape.disabled = true
+		collision_shape.set_deferred("disabled", true)
+	body.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	body.set_process_input(false)
 	body.set_process(false)
 	body.set_physics_process(false)

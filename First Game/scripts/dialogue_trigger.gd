@@ -2,7 +2,7 @@ extends Area2D
 
 @export var dialogue_text := "Welcome to Panic!"
 
-@export var next_scene_path := "res://scenes/panic_npc.tscn"
+@export var next_scene_path := "res://scenes/UI/panic_npc.tscn"
 
 var triggered := false
 

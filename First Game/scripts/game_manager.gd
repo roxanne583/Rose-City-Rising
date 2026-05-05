@@ -29,6 +29,7 @@ var activated_switches := {}
 
 func _ready():
 	Engine.time_scale = 1.0
+	print("GameManager loaded ✅")
 	get_tree().paused = false
 	add_to_group("game_manager")
 	if player:
@@ -163,7 +164,7 @@ func trigger_victory():
 
 func show_game_over():
 	if game_over_label:
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/UI/game_over.tscn")
 
 func hide_game_over():
 	if game_over_label:

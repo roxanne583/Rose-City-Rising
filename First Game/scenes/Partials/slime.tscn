@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2w2i5h0lhc6l"]
+
+[ext_resource type="Script" uid="uid://cemowaubtxlr0" path="res://scripts/slime.gd" id="1_fxbww"]
+[ext_resource type="Texture2D" uid="uid://b34sg6w04esaf" path="res://assets/sprites/Character-Enemy.png" id="3_pjw23"]
+[ext_resource type="Script" uid="uid://ca4odte7t8rsn" path="res://scenes/Partials/head_hitbox.gd" id="3_x1781"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1781"]
+atlas = ExtResource("3_pjw23")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voveg"]
+atlas = ExtResource("3_pjw23")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16mar"]
+atlas = ExtResource("3_pjw23")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8uf2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1781")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voveg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16mar")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4xjq"]
+size = Vector2(125, 74)
+
+[node name="Slime" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fxbww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, 37)
+sprite_frames = SubResource("SpriteFrames_a8uf2")
+autoplay = "default"
+frame_progress = 0.8633963
+
+[node name="BodyHitbox" type="Area2D" parent="."]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyHitbox"]
+position = Vector2(-13.5, 92)
+shape = SubResource("RectangleShape2D_u4xjq")
+
+[node name="HeadHitbox" type="Area2D" parent="."]
+position = Vector2(0, 2)
+script = ExtResource("3_x1781")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HeadHitbox"]
+position = Vector2(17.085934, 37.844547)
+scale = Vector2(7.3816504, 0.4002659)
+polygon = PackedVector2Array(-12.428715, -3, 4.3234324, -4.608307, 4.4589033, 32.866776, -12.508848, 42.999996)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-9, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(9, 0)
