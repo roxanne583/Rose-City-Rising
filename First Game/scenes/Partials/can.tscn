@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://w4nab4aexub2"]
 
-[ext_resource type="Script" path="res://scripts/can.gd" id="1_84rve"]
+[ext_resource type="Script" uid="uid://cbms7c67a4mq7" path="res://scripts/can.gd" id="1_84rve"]
 [ext_resource type="Texture2D" uid="uid://bic3osxkltpg" path="res://assets/sprites/pickup.png" id="2_84rve"]
 [ext_resource type="AudioStream" uid="uid://hxv3svfwkg67" path="res://assets/sounds/can.wav" id="3_wgna5"]
 
@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_osao3"]
-radius = 5.0
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_66sdr"]
 length = 0.001
@@ -156,7 +156,8 @@ _data = {
 }
 
 [node name="Can" type="Area2D"]
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_84rve")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

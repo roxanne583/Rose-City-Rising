@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://4y0iag1d8ktc"]
 
-[ext_resource type="Script" path="res://scripts/doughnut.gd" id="1_ix6bn"]
+[ext_resource type="Script" uid="uid://ceu0o2jngjuhv" path="res://scripts/doughnut.gd" id="1_ix6bn"]
 [ext_resource type="Texture2D" uid="uid://bic3osxkltpg" path="res://assets/sprites/pickup.png" id="2_11l1o"]
 [ext_resource type="AudioStream" uid="uid://cu0urj2sa833j" path="res://assets/sounds/doughnut.wav" id="3_11l1o"]
 
@@ -72,7 +72,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 6.0
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_osao3"]
@@ -177,13 +177,14 @@ _data = {
 }
 
 [node name="Doughnut" type="Area2D"]
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ix6bn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i3y1m")
 autoplay = "default"
-frame_progress = 0.8529994
+frame_progress = 0.33856526
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_osao3")

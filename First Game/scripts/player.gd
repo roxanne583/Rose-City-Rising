@@ -16,15 +16,20 @@ var jump_release_force = 0
 var jump_force = 0
 var has_playdate := false
 var has_donut := false
+var is_dead := false
 
 
 @onready var animated_sprite = $Violet
 
+	
 func play_lose_life_anim():
+
+	is_dead = true
 	animated_sprite.play("death")
 		
 # Main Player Controls	
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

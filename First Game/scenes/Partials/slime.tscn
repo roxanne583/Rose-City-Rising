@@ -44,10 +44,11 @@ script = ExtResource("1_fxbww")
 position = Vector2(-9, 37)
 sprite_frames = SubResource("SpriteFrames_a8uf2")
 autoplay = "default"
-frame_progress = 0.8633963
+frame_progress = 0.14103311
 
 [node name="BodyHitbox" type="Area2D" parent="."]
 position = Vector2(0, -7)
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyHitbox"]
 position = Vector2(-13.5, 92)
@@ -55,6 +56,7 @@ shape = SubResource("RectangleShape2D_u4xjq")
 
 [node name="HeadHitbox" type="Area2D" parent="."]
 position = Vector2(0, 2)
+collision_layer = 2
 script = ExtResource("3_x1781")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HeadHitbox"]
@@ -63,9 +65,9 @@ scale = Vector2(7.3816504, 0.4002659)
 polygon = PackedVector2Array(-12.428715, -3, 4.3234324, -4.608307, 4.4589033, 32.866776, -12.508848, 42.999996)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(2, 62)
 target_position = Vector2(-9, 0)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(2, 62)
 target_position = Vector2(9, 0)

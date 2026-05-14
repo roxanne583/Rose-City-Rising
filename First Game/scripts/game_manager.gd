@@ -15,6 +15,7 @@ const DOUGHNUT_POINTS = 50
 @export var max_lives := 3
 @export var start_time := 500
 @export var countdown_enabled := true
+@export var is_dead := false
 
 var base_score := 0
 var current_score := 0
@@ -30,7 +31,6 @@ var activated_switches := {}
 func _ready():
 	Engine.time_scale = 1.0
 	print("GameManager loaded ✅")
-	get_tree().paused = false
 	add_to_group("game_manager")
 	if player:
 		spawn_position = player.global_position
@@ -43,6 +43,7 @@ func _ready():
 	hide_victory()
 	if countdown_enabled:
 		start_countdown()
+			
 
 func set_score(score := 0):
 	base_score = score
@@ -86,13 +87,13 @@ func set_time(time := start_time):
 		trigger_game_over()
 
 func lose_life():
+	is_dead = true
 	if game_over:
 		return
 	current_lives = max(current_lives - 1, 0)
 	update_lives_label()
 	if current_lives <= 0:
 		trigger_game_over()
-		
 
 func respawn_player(victim: Node):
 	if game_over:

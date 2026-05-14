@@ -3,8 +3,6 @@ extends CanvasLayer
 @onready var score_label = $MarginContainer/ScoreLabel
 @onready var time_label = $TimeLabel
 @onready var lives_label = $LivesLabel
-@onready var game_over_label = $GameOverLabel
-@onready var victory_label = $VictoryLabel
 var start_time : int
 
 
@@ -16,8 +14,6 @@ func _ready():
 	update_score_label()
 	update_time_label()
 	update_lives_label()
-	hide_game_over()
-	hide_victory()
 
 func set_score(score := 0):
 	current_score = score
@@ -44,15 +40,3 @@ func update_time_label():
 
 func update_lives_label():
 	lives_label.text = "Lives: " + str(current_lives)
-
-func show_game_over():
-	game_over_label.visible = true
-
-func hide_game_over():
-	game_over_label.visible = false
-
-func show_victory():
-	victory_label.visible = true
-
-func hide_victory():
-	victory_label.visible = false

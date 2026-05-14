@@ -304,7 +304,7 @@ size = Vector2(51, 68.9)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_ofpvf")
 
 [node name="Violet" type="AnimatedSprite2D" parent="."]

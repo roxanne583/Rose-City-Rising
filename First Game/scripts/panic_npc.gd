@@ -11,7 +11,9 @@ var activated := false
 @onready var label = %Label
 
 func _ready():
-
+	dialog_button.grab_focus()
+	await get_tree().process_frame
+	dialog_button.grab_focus()
 	print("Button is:", dialog_button)  # debug
 	dialog_button.pressed.connect(_on_dialog_close_pressed)
 

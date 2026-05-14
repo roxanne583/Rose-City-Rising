@@ -1,25 +1,25 @@
 [gd_scene load_steps=16 format=4 uid="uid://b3pshrxm3dle7"]
 
-[ext_resource type="Script" uid="uid://cyb84352dcttm" path="res://scripts/panic_npc.gd" id="1_l8w1u"]
-[ext_resource type="Texture2D" uid="uid://bi8icyopgqlqa" path="res://assets/sprites/character-1-panic.png" id="2_0cqol"]
-[ext_resource type="Texture2D" uid="uid://d0rpkhm51dhru" path="res://assets/sprites/6th-Flanders-Tileset-2.png" id="3_0cqol"]
-[ext_resource type="Texture2D" uid="uid://dcddgyaa3opi4" path="res://assets/sprites/old-town-2.png" id="3_241rc"]
-[ext_resource type="FontFile" uid="uid://uoaunww7uf14" path="res://assets/fonts/MonaSans-SemiBold.ttf" id="5_241rc"]
+[ext_resource type="Script" uid="uid://cyb84352dcttm" path="res://scripts/panic_npc.gd" id="1_h1spl"]
+[ext_resource type="FontFile" uid="uid://uoaunww7uf14" path="res://assets/fonts/MonaSans-SemiBold.ttf" id="2_cu2fm"]
+[ext_resource type="Texture2D" uid="uid://bi8icyopgqlqa" path="res://assets/sprites/character-1-panic.png" id="3_lr4nk"]
+[ext_resource type="Texture2D" uid="uid://dcddgyaa3opi4" path="res://assets/sprites/old-town-2.png" id="4_4ed34"]
+[ext_resource type="Texture2D" uid="uid://d0rpkhm51dhru" path="res://assets/sprites/6th-Flanders-Tileset-2.png" id="5_baxac"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hyg8y"]
-atlas = ExtResource("2_0cqol")
+atlas = ExtResource("3_lr4nk")
 region = Rect2(0, 0, 74, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u28am"]
-atlas = ExtResource("2_0cqol")
+atlas = ExtResource("3_lr4nk")
 region = Rect2(74, 0, 74, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xkwfu"]
-atlas = ExtResource("2_0cqol")
+atlas = ExtResource("3_lr4nk")
 region = Rect2(148, 0, 74, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6yjj8"]
-atlas = ExtResource("2_0cqol")
+atlas = ExtResource("3_lr4nk")
 region = Rect2(222, 0, 74, 74)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8ef5h"]
@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwymh"]
-texture = ExtResource("3_241rc")
+texture = ExtResource("4_4ed34")
 17:22/0 = 0
 17:23/0 = 0
 16:23/0 = 0
@@ -95,7 +95,7 @@ texture = ExtResource("3_241rc")
 sources/1 = SubResource("TileSetAtlasSource_rwymh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e74sr"]
-texture = ExtResource("3_0cqol")
+texture = ExtResource("5_baxac")
 11:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0cqol"]
@@ -105,7 +105,7 @@ sources/0 = SubResource("TileSetAtlasSource_e74sr")
 size = Vector2(64, 64)
 
 [node name="PanicNPC" type="Area2D"]
-script = ExtResource("1_l8w1u")
+script = ExtResource("1_h1spl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -121,7 +121,7 @@ size_flags_vertical = 8
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_241rc")
+theme_override_fonts/font = ExtResource("2_cu2fm")
 text = "Hey Violet! Here are your playdates. 
 "
 horizontal_alignment = 1

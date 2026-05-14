@@ -120,6 +120,7 @@ offset_right = -197.0
 offset_bottom = -306.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.88920903, 0.21322438, 0.67326546, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 16
 text = "Back - B"

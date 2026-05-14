@@ -1,6 +1,6 @@
 extends Control
 
-@onready var restart_button = $VBoxContainer/HBoxContainer/RestartButton
+@onready var restart_button = $VBoxContainer/HBoxContainer/NewButton
 
 func _ready():
 	restart_button.grab_focus()
