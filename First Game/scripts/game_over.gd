@@ -10,4 +10,5 @@ func _ready():
 
 func _on_restart_button_pressed():
 	print("restart pressed ✅")
+	GameManager.reset_game()
 	get_tree().change_scene_to_file("res://scenes/UI/start_menu.tscn")

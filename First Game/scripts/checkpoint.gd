@@ -8,4 +8,4 @@ func _on_body_entered(body):
 	if body.name != "Player":
 		return
 	if game_manager:
-		game_manager.set_spawn_position(global_position)
+		GameManager.spawn_position = $"../SpawnPoint".global_position

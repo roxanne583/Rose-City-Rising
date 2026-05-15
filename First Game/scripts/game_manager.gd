@@ -21,21 +21,26 @@ var base_score := 0
 var current_score := 0
 var current_time := start_time
 var current_lives := 3
-var spawn_position := Vector2.ZERO
+var spawn_position = Vector2.ZERO
 var game_over := false
 var victory := false
 var countdown_timer: Timer = null
 var light_switches_activated := 0
 var activated_switches := {}
+var quit_timer = 0.0
 
 func _ready():
 	Engine.time_scale = 1.0
 	print("GameManager loaded ✅")
 	add_to_group("game_manager")
+	await get_tree().process_frame
 	if player:
 		spawn_position = player.global_position
 	current_lives = max_lives
+	print("Spawn position:", spawn_position)
 	current_time = start_time
+	print("Start Time:", start_time)
+	print("Current Time:", current_time)
 	update_score_label()
 	update_time_label()
 	update_lives_label()
@@ -85,6 +90,7 @@ func set_time(time := start_time):
 	update_time_label()
 	if current_time <= 0:
 		trigger_game_over()
+		print("current time game over")
 
 func lose_life():
 	is_dead = true
@@ -94,21 +100,35 @@ func lose_life():
 	update_lives_label()
 	if current_lives <= 0:
 		trigger_game_over()
+		print("lives game over")
 
 func respawn_player(victim: Node):
-	if game_over:
+
+	if victim == null:
+		print("No victim")
 		return
-	if not victim:
-		return
-	if victim is CharacterBody2D:
-		victim.velocity = Vector2.ZERO
+
+	print("Respawning player ✅")
+
+	Engine.time_scale = 1.0
+
 	victim.global_position = spawn_position
-	var collision_shape = victim.get_node_or_null("CollisionShape2D")
-	if collision_shape:
-		collision_shape.disabled = false
-	victim.set_process_input(true)
+
+	# re-enable player
 	victim.set_process(true)
 	victim.set_physics_process(true)
+	victim.set_process_input(true)
+	victim.process_mode = Node.PROCESS_MODE_INHERIT
+
+	# re-enable collisions
+	var collision_shape = victim.get_node_or_null("CollisionShape2D")
+
+	if collision_shape:
+		collision_shape.set_deferred("disabled", false)
+
+	# reset velocity
+	if victim is CharacterBody2D:
+		victim.velocity = Vector2.ZERO
 
 func set_spawn_position(position: Vector2):
 	spawn_position = position
@@ -124,9 +144,8 @@ func start_countdown():
 	countdown_timer.start()
 
 func _on_countdown_timeout():
-	if game_over:
-		return
-	current_time = max(current_time - 1, 0)
+
+	current_time -= 1
 	update_time_label()
 	if current_time <= 0:
 		trigger_game_over()
@@ -145,8 +164,8 @@ func update_lives_label():
 
 func trigger_game_over():
 	game_over = true
-	if countdown_timer:
-		countdown_timer.stop()
+	get_tree().paused = true
+	print("GAME OVER ⛔")
 	show_game_over()
 	if player:
 		player.set_physics_process(false)
@@ -164,8 +183,8 @@ func trigger_victory():
 		player.set_physics_process(false)
 
 func show_game_over():
-	if game_over_label:
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/UI/game_over.tscn")
+	get_tree().paused = false
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/UI/game_over.tscn")
 
 func hide_game_over():
 	if game_over_label:
@@ -178,3 +197,25 @@ func show_victory():
 func hide_victory():
 	if victory_label:
 		victory_label.visible = false
+		
+func reset_game():
+
+	game_over = false
+	current_time = start_time
+	current_lives = max_lives
+	get_tree().paused = false
+	
+
+func _process(delta):
+
+	if Input.is_action_pressed("ui_cancel"):
+		quit_timer += delta
+		if quit_timer > 3.0:
+			get_tree().quit()
+	else:
+		quit_timer = 0.0
+	if Input.is_action_pressed("ui_left") \
+	and Input.is_action_pressed("ui_right") \
+	and Input.is_action_pressed("Pause") \
+	and Input.is_action_pressed("ui_select"):
+		get_tree().quit()
