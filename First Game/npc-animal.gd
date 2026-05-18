@@ -1,7 +1,7 @@
 extends Node2D
 
 const SPEED = 100
-
+const GRAVITY = 900.0
 var direction = 1
 
 @onready var ray_cast_right = $RayCastRight

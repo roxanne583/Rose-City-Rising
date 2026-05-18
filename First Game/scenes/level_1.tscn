@@ -24403,7 +24403,7 @@ script = ExtResource("17_n50md")
 
 [node name="Slime6" parent="Characters" instance=ExtResource("11_mmfjm")]
 z_index = 8
-position = Vector2(2678, 31)
+position = Vector2(2678, 47)
 
 [node name="Cityscape" type="Node2D" parent="."]
 position = Vector2(0, -1)
