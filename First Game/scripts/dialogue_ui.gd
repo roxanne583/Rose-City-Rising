@@ -1,17 +1,16 @@
 extends CanvasLayer
 
 @onready var panel = $PanelContainer
-
 @onready var label = $PanelContainer/Label
-
-@onready var button = $PanelContainer/Button
+@onready var lvl1_button = $PanelContainer/Button
 
 signal dialogue_finished
 
 func _ready():
-
+	lvl1_button.grab_focus()
 	panel.visible = false
-	button.pressed.connect(_on_button_pressed)
+	lvl1_button.pressed.connect(_on_button_pressed)
+	
 
 func show_dialogue(text: String):
 

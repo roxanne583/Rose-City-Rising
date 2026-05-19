@@ -4,7 +4,7 @@ var dialogue_ui
 
 func _ready():
 
-	dialogue_ui = preload("res://scenes/dialogueUI.tscn").instantiate()
+	dialogue_ui = preload("res://scenes/UI/dialogueUI.tscn").instantiate()
 	get_tree().root.call_deferred("add_child", dialogue_ui)
 
 func show(text: String, callback: Callable = Callable()):

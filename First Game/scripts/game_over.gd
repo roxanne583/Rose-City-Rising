@@ -1,9 +1,14 @@
 extends Control
 
-@onready var menu_button = %MenuButton
+@onready var restart_button = $VBoxContainer/HBoxContainer/RestartButton
 
+func _ready():
+	restart_button.grab_focus()
+	await get_tree().process_frame
+	restart_button.grab_focus()
+	restart_button.pressed.connect(_on_restart_button_pressed)
 
-func _on_menu_button_pressed():
-	Engine.time_scale = 1.0
-	get_tree().paused = false
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/start_menu.tscn")
+func _on_restart_button_pressed():
+	print("restart pressed ✅")
+	GameManager.reset_game()
+	get_tree().change_scene_to_file("res://scenes/UI/start_menu.tscn")

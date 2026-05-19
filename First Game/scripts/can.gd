@@ -6,3 +6,4 @@ extends Area2D
 func _on_body_entered(_body):
 	game_manager.add_score(game_manager.CAN_POINTS)
 	animation_player.play("pickup")
+	print("CAN TOUCHED:", _body.name)
